@@ -2,7 +2,22 @@
 
 Proyecto React + Vite + Tailwind + Framer Motion + GSAP + Swiper + Lenis.
 
-## Cómo correrlo
+## 🚀 Cómo publicarlo en GitHub Pages (correcto, sin errores)
+
+**⚠️ Corrección importante (página en blanco):** si tu página quedaba completamente en blanco después de publicar, era porque faltaba el archivo `.nojekyll`. GitHub Pages procesa los sitios con una herramienta llamada Jekyll por defecto, la cual puede interferir con proyectos de React/Vite. Ya agregué `public/.nojekyll` y un paso extra en el Action que lo garantiza — no necesitas hacer nada manual, solo subir el proyecto de nuevo.
+
+**No subas la carpeta del proyecto tal cual** — eso es lo que causaba el error de "HTML como texto" la primera vez. En vez de eso:
+
+1. Sube **todo el contenido de esta carpeta** a un repositorio de GitHub (igual que hiciste con los HTML sueltos: "Add file" → "Upload files").
+2. Ve a **Settings → Pages**.
+3. En **"Source"**, selecciona **"GitHub Actions"** (⚠️ NO selecciones "Deploy from a branch" — ese es el que causaba el problema).
+4. Espera 1-2 minutos — el archivo `.github/workflows/deploy.yml` que ya está incluido se encarga de instalar todo, compilar el proyecto, y publicarlo automáticamente.
+5. Ve a la pestaña **"Actions"** de tu repositorio para ver el progreso — cuando el ícono se ponga verde ✅, tu página ya está publicada.
+6. El link te va a aparecer en **Settings → Pages**, arriba de todo.
+
+**Cada vez que subas un cambio nuevo**, este proceso se repite solo — no tienes que hacer nada más.
+
+## Cómo correrlo en tu computadora (para probar antes de subir)
 
 ```
 npm install
